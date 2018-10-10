@@ -1,0 +1,374 @@
+﻿@{
+    ViewBag.Title = "FormularioDiagnostico";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S I G E C A</title>
+    <!-- BOOTSTRAP STYLES-->
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+    <!-- CUSTOM STYLES-->
+    <link href="~/css/custom.css" rel="stylesheet" />
+    <!-- CSS MENU-->
+    <link href="~/Content/MenuTab.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <!--funcionaldad múltiple selelect-->
+    <link href="~/Content/multiple-select.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="container">
+        <form class="well form-horizontal" action=" " method="post" id="contact_form">
+            <fieldset>
+                <!-- Form Name -->
+                <legend align="center"> <b> Diagnóstico </b> </legend><br /><br /><br />
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Tipo de demanda<font color="red">*</font></label>
+                    <div class="col-md-3 selectContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                            <select id="TP" name="tp" class="form-control selectpicker" onchange="Violencia()">
+                                <option value="Solicitud información">Solicitud información</option>
+                                <option value="Violencia intrafamiliar">Violencia intrafamiliar</option>
+                                <option value="Violencia en la infancia">Violencia en la infancia</option>
+                                <option value="Violencia extrafamiliar">Violencia extrafamiliar</option>
+                                <option value="Crecimiento personal">Crecimiento personal</option>
+                                <option value="Necesidades económicas">Necesidades económicas</option>
+                                <option value="Estilos de vida saludables">Estilos de vida saludables</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--------------------------------------------------Procedimientos legales---------------------------------------------------------------------->
+                    <div id="PLR" style="display: none;">
+                        <!--Caso violencia-->
+                        <label class="col-md-3 control-label">Procedimientos legales realizados<font color="red">*</font></label>
+                        <div class="col-md-3 selectContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                <select name="plr" class="form-control selectpicker">
+                                    <option value="Medidas de protección">Medidas de protección</option>
+                                    <option value="Denuncia por penalización de violencia contra la mujer">Denuncia por penalización de violencia contra la mujer</option>
+                                    <option value="Pensión alimentaria">Pensión alimentaria</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Referencia a otra institución</label>
+                    <div class="col-md-7 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                            <input name="phone" placeholder="Referencia a otra institución" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div id="CasoViolencia" style="display: none;">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Tipo de violencia identificados</label>
+                        <label class="col-md-4 control-label">Indicadores</label>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">Física<font color="red">*</font></label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                <textarea style="text-align: center;" rows="5" cols="60" name="website" placeholder="Describa los indicadores" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">Psicológica<font color="red">*</font></label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                <textarea style="text-align: center;" rows="5" cols="60" name="website" placeholder="Describa los indicadores" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">Sexual<font color="red">*</font></label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                <textarea style="text-align: center;" rows="5" cols="60" name="website" placeholder="Describa los indicadores" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">Patrimonial<font color="red">*</font></label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                <textarea style="text-align: center;" rows="5" cols="60" name="website" placeholder="Describa los indicadores" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-md-6 control-label">Datos de las personas agresoras</label>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label">Nombre completo<font color="red">*</font></label>
+                            <div class="col-md-7 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input name="phone" placeholder="Nombre completo" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <label class="col-md-1 control-label">Edad<font color="red">*</font></label>
+                            <div class="col-md-2 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
+                                    <input name="phone" placeholder="Edad" class="form-control" type="text" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-1 control-label">Cédula<font color="red">*</font></label>
+                            <div class="col-md-3 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input name="phone" placeholder="x-xxxx-xxxx" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <label class="col-md-1 control-label">Ocupación<font color="red">*</font></label>
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
+                                    <input name="phone" placeholder="Ocupación" class="form-control" type="text" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-1 control-label">Nacionalidad<font color="red">*</font></label>
+                            <div class="col-md-3 selectContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                    <select name="state" class="form-control selectpicker">
+                                        <option value="Costarricense">Costarricense</option>
+                                        <option value="Nicaragüense">Nicaragüense</option>
+                                        <option value="Colombiana">Colombiana/o</option>
+                                        <option value="Panameña">Panameña/o</option>
+                                        <option value="Salvadoreña">Salvadoreña/o</option>
+                                        <option value="Cubana">Cubana/o</option>
+                                        <option value="Venezolana">Venezolana/o</option>
+                                        <option value="Otro">Otro</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <label class="col-md-1 control-label">Parentesco<font color="red">*</font></label>
+                            <div class="col-md-3 selectContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                    <select name="state" class="form-control selectpicker">
+                                        <option value="Padre">Padre</option>
+                                        <option value="Madre">Madre</option>
+                                        <option value="Ambos padres">Ambos padres</option>
+                                        <option value="Pareja">Pareja</option>
+                                        <option value="Expareja">Expareja</option>
+                                        <option value="Esposo/a">Esposo/a</option>
+                                        <option value="Exesposo/a">Exesposo/a</option>
+                                        <option value="Hijos/as">Hijos/as</option>
+                                        <option value="Hermano/a">Hermano/a</option>
+                                        <option value="Progenitor/a de los/as hijos/as">Progenitor/a de los/as hijos/as</option>
+                                        <option value="Otros/as familiares">Otros/as familiares</option>
+                                        <option value="Otras personas">Otras personas</option>
+                                        <option value="Varias personas">Varias personas</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"> </label>
+                            <div class="col-md-4">
+                                <button type="button" class="btn">Generar nueva boleta</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Atención brindada<font color="red">*</font></label>
+                    <div class="col-md-6 selectContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                            <select id ="ms"name="state" class="form-control selectpicker" multiple="multiple">
+                                <option value="Orientación">Orientación</option>
+                                <option value="Contención emocional">Contención emocional</option>
+                                <option value="Información sobre derechos, aspectos legales y servicios">Información sobre derechos, aspectos legales y servicios</option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Referencias internas para seguimiento <font color="red">*</font></label>
+                    <div class="col-md-6 selectContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                            <select id="ms" name="state" class="form-control selectpicker" multiple="multiple">
+                                <option value="">Atención individual</option>
+                                <option value="">Grupo de apoyo de VIF</option>
+                                <option value="">Grupo terapéutico de VIF</option>
+                                <option value="">Grupo terapético de violencia en la infancia</option>
+                                <option value="">Grupo de codependencia</option>
+                                <option value="">Grupo de crecimiento personal</option>
+                                <option value="">Atención individual urgente</option>
+                                <option value="">Grupo estilos de vida saludables</option>
+                                <option value="">Curso liderazo femenino y promotoras</option>
+                                <option value="">Grupo hombres</option>
+                                <option value="">Grupo hombres adolescentes</option>
+                                <option value="">Grupo mujeres adolescentes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Referencias internas</label>
+                    <div class="col-md-7 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                            <input name="phone" placeholder="Referencia a otra institución" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label class="col-md-8 control-label">Resumen de la situación presentada</label>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Motivo de consulta en general<font color="red">*</font></label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                            <textarea style="text-align: center;" rows="3" cols="55" name="website" placeholder="Motivo de consulta en general" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Secuelas de violencia vivida</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                            <textarea style="text-align: center;" rows="3" cols="55" name="website" placeholder="Secuelas de violencia vivida" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Factores de riesgo y protectores identificados</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                            <textarea style="text-align: center;" rows="3" cols="55" name="website" placeholder="Factores de riesgo y protectores identificados" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Intervenciones realizadas<font color="red">*</font></label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                            <textarea style="text-align: center;" rows="3" cols="55" name="website" placeholder="Intervenciones realizadas" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Valoración en general<font color="red">*</font></label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                            <textarea style="text-align: center;" rows="3" cols="55" name="website" placeholder="Valoración en general" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Responsable a cargo</label>
+                    <div class="col-md-9 inputGroupContainer">
+                        <div class="input-group">
+                            <input name="first_name" placeholder="Responsable a cargo" class="form-control" type="text" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Cargo</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <input name="first_name" placeholder="Cargo" class="form-control" type="text" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-success" role="alert" id="success_message">¡Datos correctos!<i class="glyphicon glyphicon-ok"></i> Información guardada.</div>
+
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <button type="submit" class="Boton">Guardar</button>
+                    </div>
+                </div>
+
+            </fieldset>
+
+        </form>
+    </div>
+</body>
+<script >
+    function Violencia() {
+        var x = document.getElementById("TP").value;
+
+        if (x == "Violencia intrafamiliar" || x == "Violencia en la infancia" || x == "Violencia extrafamiliar") {
+            document.getElementById('PLR').style.display = "inline";
+            document.getElementById('CasoViolencia').style.display = "inline";
+        }
+        else {
+
+            document.getElementById('PLR').style.display = "none";
+            document.getElementById('CasoViolencia').style.display = "none";
+        }
+    }
+</script>
+<script src="~/Scripts/multiple-select.js"></script>
+<script src="~/Scripts/jquery.min.js"></script>
+<script>
+    $(function () {
+        $('#ms').change(function () {
+            console.log($(this).val());
+        }).multipleSelect({
+            width: '100%'
+        });
+    });
+</script>
+
+</html>
