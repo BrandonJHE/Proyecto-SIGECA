@@ -21,7 +21,8 @@
     <link href="~/Content/MenuTab.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-   
+    <link rel="stylesheet" href="~/Content/jquery-treetable.css">
+
 </head>
 <body>
 
@@ -128,7 +129,11 @@
             <!-------------------------------------------- Form Información Personal----------------------------------- -->
             <div id="IP" class="tabcontent">
                 <!-------------------------------Tabla---------------------------------------------------->
+                <fieldset>
+                    <legend align="center"> <b>Información personal</b> </legend><br /><br />
+                </fieldset>
                 <div class="table-container">
+
                     <table class="table-users table" border="0">
                         <tbody>
                             <tr width="10" align="center">
@@ -157,21 +162,24 @@
             </div> <!-----------------------------------------Fin IP--------------------------------------------->
             <!-------------------------------------------------- Form Diagnóstico ------------------------------->
             <div id="D" class="tabcontent">
+                <fieldset>
+                    <legend align="center"> <b>Diagnóstico</b> </legend><br /><br />
+                </fieldset>
                 <!-------------------------------Tabla---------------------------------------------------->
                 <div class="table-container">
                     <table class="table-users table" border="0">
                         <tbody>
                             <tr width="10" align="center">
-                                <th>Diagnóstico</th>
                                 <th>Nombre completo</th>
+                                <th>Cédula</th>
                                 <th>Último acceso</th>
                             </tr>
                             <tr>
                                 <td>
-                                    Diagnóstico 1<br>
+                                    Brandon Hernández Elizondo
                                 </td>
                                 <td>
-                                    Brandon Hernández Elizondo
+                                    207290604
                                 </td>
                                 <td>
                                     09/10/2018 <br><small class="text-muted">Hace 1 día</small>
@@ -180,7 +188,6 @@
                                     <button type="submit" value="Agregar" class="Boton" onclick="window.open('','_new').location.href='@Url.Action("FormularioDiagnostico", "Shared")'">Agregar</button>
                                 </td>
                             </tr>
-
                         </tbody>
                     </table>
                 </div>
@@ -188,90 +195,151 @@
             </div> <!----------------------------------Fin Diagnóstico------------------------------------------------->
 
             <div id="S" class="tabcontent">
-                <!-----------------------Seguimiento---------------------------------------->
-                <form class="well form-horizontal" action=" " method="post" id="contact_form">
-
-                    <fieldset>
-                        <legend align="center"> <b> Bitácoras de atención individual</b> </legend><br /><br /><br />
-
-                        <div class="form-group">
-                            <label class="col-md-1 control-label">Fecha:</label>
-                            <div class="col-md-4">
-                                <div id="Fecha"></div>
-                            </div>
-                            <label class="col-md-1 control-label">Sesión:</label>
-                            <div class="col-md-4">
-                                <input name="first_name" placeholder="XXXX" class="form-control" type="text" disabled>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Segumiento<font color="red">*</font></label>
-                            <div class="col-md-8 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                                    <textarea style="text-align: center;" rows="4" cols="55" name="website" placeholder="Seguimiento" class="form-control"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-2 control-label">Responsable a cargo</label>
-                            <div class="col-md-9 inputGroupContainer">
-                                <div class="input-group">
-                                    <input name="first_name" placeholder="Responsable a cargo" class="form-control" type="text" disabled>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-2 control-label">Cargo</label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <input name="first_name" placeholder="Cargo" class="form-control" type="text" disabled>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="alert alert-success" role="alert" id="success_message">¡Datos correctos!<i class="glyphicon glyphicon-ok"></i> Información guardada.</div>
-                        <!-- Button -->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label"></label>
-                            <div class="col-md-4">
-                                <button type="submit" class="Boton">Guardar</button>
-                            </div>
-                        </div>
-
-                    </fieldset>
-                </form>
-            </div><!---------------------seguimiento------------------------------------>
-            <!---------------------Adjuntos------------------------------------>
-
-            <div id="A" class="tabcontent">
                 <fieldset>
-                    <legend align="center"> <b> Adjuntar archivos </b> </legend><br />
+                    <legend align="center"> <b>Seguimientos</b> </legend><br /><br />
                 </fieldset>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Consentimiento informado</label>
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="submit" value="Subir imagen" name="Subir">
-                </div>
-                <br />
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Referencias</label>
-                    <input type="file" name="fileToUpload" id="fileToUpload" multiple>
-                    <input type="submit" value="Subir imágenes" name="Subir">
-                </div>
-                <br />
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Otro</label>
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="submit" value="Subir imagen" name="Subir">
-                </div>
+                <!----------------------------------------Tabla Seguimientos---------------------------------------------------->
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Diagnóstico</th>
+                            <th>Nombre</th>
+                            <th>Último acceso</th>
+                            <th>Seguimientos</th>
+                            <th>Agregar nuevo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Brandon Hernández Elizondo</td>
+                            <td>
+                                09/10/2018 <br><small class="text-muted">Hace 1 día</small>
+                            </td>
+                            <td>
+                                <div class="tt" data-tt-id="root" data-tt-parent="">Ver</div>
+                            </td>
+                            <td>
+                                <button class="Boton" onclick="document.getElementById('FS').style.display='block'">
+                                    Agregar
+                                </button>
+                            </td>
 
+                        </tr>
+                        <tr>
+                            <th scope="row">Seguimiento 1</th>
+                            <td></td>
+                            <td>
+                                09/10/2018 <br><small class="text-muted">Hace 1 día</small>
+                            </td>
+                            <td>
+                                <div class="tt" data-tt-id="Seguimiento 1" data-tt-parent="root"></div>
+                            </td>
 
-            </div><!--------------------Fin adjutos--------------------------------->
+                        </tr>
+                        <tr>
+                            <th scope="row">Seguimiento 2</th>
+                            <td></td>
+                            <td>
+                                09/10/2018 <br><small class="text-muted">Hace 1 día</small>
+                            </td>
+                            <td>
+                                <div class="tt" data-tt-id="Seguimiento 2" data-tt-parent="root"></div>
+                            </td>
 
-        </div>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--------------------------------------------Fin tabla seguimientos---------------------------------------------------------->
+                <!-----------------------form Seguimiento---------------------------------------->
+                <div id="FS" class="modal">
+
+                    <div class="modal-content animate" action="/action_page.php" style=" margin-top:75px; height: 300px; margin-bottom:100px; margin-left: 50px; margin-right:50px;">
+                        <form class="well form-horizontal" action=" " method="post" id="contact_form">
+                            <span onclick="document.getElementById('FS').style.display='none'" class="close" title="Close PopUp">&times;</span>
+                            <fieldset>
+                                <legend align="center"> <b> Bitácoras de atención individual</b> </legend><br /><br /><br />
+
+                                <div class="form-group">
+                                    <label class="col-md-1 control-label">Fecha:</label>
+                                    <div class="col-md-4">
+                                        <div id="Fecha"></div>
+                                    </div>
+                                    <label class="col-md-1 control-label">Sesión:</label>
+                                    <div class="col-md-4">
+                                        <input name="first_name" placeholder="XXXX" class="form-control" type="text" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Segumiento<font color="red">*</font></label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                            <textarea style="text-align: center;" rows="10" cols="55" name="website" placeholder="Seguimiento" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Responsable a cargo</label>
+                                    <div class="col-md-9 inputGroupContainer">
+                                        <div class="input-group">
+                                            <input name="first_name" placeholder="Responsable a cargo" class="form-control" type="text" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Cargo</label>
+                                    <div class="col-md-4 inputGroupContainer">
+                                        <div class="input-group">
+                                            <input name="first_name" placeholder="Cargo" class="form-control" type="text" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="alert alert-success" role="alert" id="success_message">¡Datos correctos!<i class="glyphicon glyphicon-ok"></i> Información guardada.</div>
+                                <!-- Button -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"></label>
+                                    <div class="col-md-4">
+                                        <button type="submit" class="Boton">Guardar</button>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </form>
+                    </div><!------Modal content---->
+                </div><!---Modal--->
+
+            </div><!---------------------Tab seguimiento------------------------------------>
+                <!---------------------Adjuntos------------------------------------>
+                <div id="A" class="tabcontent">
+                    <fieldset>
+                        <legend align="center"> <b> Adjuntar archivos </b> </legend><br />
+                    </fieldset>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Consentimiento informado</label>
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="submit" value="Subir imagen" name="Subir">
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Referencias</label>
+                        <input type="file" name="fileToUpload" id="fileToUpload" multiple>
+                        <input type="submit" value="Subir imágenes" name="Subir">
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Otro</label>
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="submit" value="Subir imagen" name="Subir">
+                    </div>
+
+                    Carpeta: <a href="@Url.Action("ConsultarExpediente", "Shared")"> Carpeta de la paciente </a>
+                </div><!--------------------Fin adjutos--------------------------------->
+
+            </div>
         <!-- /. PAGE WRAPPER  -->
     </div>
     <!-- /. WRAPPER  -->
@@ -287,6 +355,21 @@
     <script src="~/Scripts/MenuIF.js"></script>
     <script src="~/Scripts/Hora.js"></script>
     <script src="~/Scripts/Tab.js"></script>
+    <script src="~/Scripts/d3.min.js"></script>
+    <script src="~/Scripts/jquery-1.11.3.min.js"></script>
+    <script src="~/Scripts/jquery-treetable.js"></script>
+    <script>
+        $("table").treetable();
+        var modal = document.getElementById('PA');
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    </script>
+
 </body>
 </html>
 
