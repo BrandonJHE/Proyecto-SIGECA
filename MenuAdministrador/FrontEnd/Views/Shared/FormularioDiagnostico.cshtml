@@ -20,6 +20,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <!--funcionaldad múltiple selelect-->
     <link href="~/Content/multiple-select.css" rel="stylesheet" />
+   
 </head>
 <body>
     <div id="container">
@@ -70,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                <br>
+                <!--------------------------------------------Caso violencia------------------------------------------------>
                 <div id="CasoViolencia" style="display: none;">
                     <div class="form-group">
                         <label class="col-md-2 control-label">Tipo de violencia identificados</label>
@@ -120,101 +121,139 @@
                     <br>
 
 
-                    <fieldset>
-                        <div class="form-group">
-                            <label class="col-md-6 control-label">Datos de las personas agresoras</label>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label class="col-md-1 control-label">Nombre completo<font color="red">*</font></label>
-                            <div class="col-md-7 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <input name="phone" placeholder="Nombre completo" class="form-control" type="text">
-                                </div>
-                            </div>
-                            <label class="col-md-1 control-label">Edad<font color="red">*</font></label>
-                            <div class="col-md-2 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
-                                    <input name="phone" placeholder="Edad" class="form-control" type="text" required>
-                                </div>
-                            </div>
-                        </div>
+                    <!-------------------------------Tabla---------------------------------------------------->
+                    <div class="table-container">
+                        <table class="table-users table" border="0">
+                            <tbody>
+                                <tr width="10" align="center">
+                                    <th>Nombre completo</th>
+                                    <th>Cédula</th>
+                                    <th>Último acceso</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Brandon Hernández Elizondo<br>
+                                    </td>
+                                    <td>
+                                        207290604
+                                    </td>
+                                    <td>
+                                        09/10/2018 <br><small class="text-muted">Hace 1 día</small>
+                                    </td>
+                                    <td>
+                                        <button class="Boton">Editar</button>
+                                    </td>
+                                </tr>
 
-                        <div class="form-group">
-                            <label class="col-md-1 control-label">Cédula<font color="red">*</font></label>
-                            <div class="col-md-3 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <input name="phone" placeholder="x-xxxx-xxxx" class="form-control" type="text">
-                                </div>
-                            </div>
-                            <label class="col-md-1 control-label">Ocupación<font color="red">*</font></label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
-                                    <input name="phone" placeholder="Ocupación" class="form-control" type="text" required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-1 control-label">Nacionalidad<font color="red">*</font></label>
-                            <div class="col-md-3 selectContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                                    <select name="state" class="form-control selectpicker">
-                                        <option value="Costarricense">Costarricense</option>
-                                        <option value="Nicaragüense">Nicaragüense</option>
-                                        <option value="Colombiana">Colombiana/o</option>
-                                        <option value="Panameña">Panameña/o</option>
-                                        <option value="Salvadoreña">Salvadoreña/o</option>
-                                        <option value="Cubana">Cubana/o</option>
-                                        <option value="Venezolana">Venezolana/o</option>
-                                        <option value="Otro">Otro</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <label class="col-md-1 control-label">Parentesco<font color="red">*</font></label>
-                            <div class="col-md-3 selectContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                                    <select name="state" class="form-control selectpicker">
-                                        <option value="Padre">Padre</option>
-                                        <option value="Madre">Madre</option>
-                                        <option value="Ambos padres">Ambos padres</option>
-                                        <option value="Pareja">Pareja</option>
-                                        <option value="Expareja">Expareja</option>
-                                        <option value="Esposo/a">Esposo/a</option>
-                                        <option value="Exesposo/a">Exesposo/a</option>
-                                        <option value="Hijos/as">Hijos/as</option>
-                                        <option value="Hermano/a">Hermano/a</option>
-                                        <option value="Progenitor/a de los/as hijos/as">Progenitor/a de los/as hijos/as</option>
-                                        <option value="Otros/as familiares">Otros/as familiares</option>
-                                        <option value="Otras personas">Otras personas</option>
-                                        <option value="Varias personas">Varias personas</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label class="col-md-4 control-label"> </label>
-                            <div class="col-md-4">
-                                <button type="button" class="btn">Generar nueva boleta</button>
-                            </div>
-                        </div>
-                    </fieldset>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="Boton" onclick="document.getElementById('PA').style.display='block'">
+                        Agregar agresor
+                    </button>
+                    <br /> <br />
                 </div>
+               
+                <!---------------------------------------Formulario personas agresoras------------------------------------>
+                <div id="PA" class="modal">
+                    <div class="modal-content animate" action="/action_page.php" style=" margin-top:200px;  margin-bottom:200px; margin-left: 50px; margin-right:50px;">
 
+                        <span onclick="document.getElementById('PA').style.display='none'" class="close" title="Close PopUp">&times;</span>
+
+                        <fieldset>
+                            <legend align="center"><b>Datos de las personas agresoras </b> </legend>
+                            <br>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label">Nombre completo<font color="red">*</font></label>
+                                <div class="col-md-7 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input name="phone" placeholder="Nombre completo" class="form-control" type="text" required>
+                                    </div>
+                                </div>
+                                <label class="col-md-1 control-label">Edad<font color="red">*</font></label>
+                                <div class="col-md-2 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
+                                        <input name="phone" placeholder="Edad" class="form-control" type="text" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-1 control-label">Cédula<font color="red">*</font></label>
+                                <div class="col-md-3 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input name="phone" placeholder="x-xxxx-xxxx" class="form-control" type="text" required>
+                                    </div>
+                                </div>
+                                <label class="col-md-1 control-label">Ocupación<font color="red">*</font></label>
+                                <div class="col-md-4 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
+                                        <input name="phone" placeholder="Ocupación" class="form-control" type="text" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-1 control-label">Nacionalidad<font color="red">*</font></label>
+                                <div class="col-md-3 selectContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                        <select name="state" class="form-control selectpicker" required>
+                                            <option value="Costarricense">Costarricense</option>
+                                            <option value="Nicaragüense">Nicaragüense</option>
+                                            <option value="Colombiana">Colombiana/o</option>
+                                            <option value="Panameña">Panameña/o</option>
+                                            <option value="Salvadoreña">Salvadoreña/o</option>
+                                            <option value="Cubana">Cubana/o</option>
+                                            <option value="Venezolana">Venezolana/o</option>
+                                            <option value="Otro">Otro</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <label class="col-md-1 control-label">Parentesco<font color="red">*</font></label>
+                                <div class="col-md-3 selectContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                        <select name="state" class="form-control selectpicker" required>
+                                            <option value="Padre">Padre</option>
+                                            <option value="Madre">Madre</option>
+                                            <option value="Ambos padres">Ambos padres</option>
+                                            <option value="Pareja">Pareja</option>
+                                            <option value="Expareja">Expareja</option>
+                                            <option value="Esposo/a">Esposo/a</option>
+                                            <option value="Exesposo/a">Exesposo/a</option>
+                                            <option value="Hijos/as">Hijos/as</option>
+                                            <option value="Hermano/a">Hermano/a</option>
+                                            <option value="Progenitor/a de los/as hijos/as">Progenitor/a de los/as hijos/as</option>
+                                            <option value="Otros/as familiares">Otros/as familiares</option>
+                                            <option value="Otras personas">Otras personas</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label"> </label>
+                                <div class="col-md-4">
+                                    <button type="button" class="Boton">Guardar</button>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                    </div>
+                </div>
+                <!-----------------------------------------Fin form persona agresora---------------------------------------------------->
                 <div class="form-group">
                     <label class="col-md-2 control-label">Atención brindada<font color="red">*</font></label>
                     <div class="col-md-6 selectContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                            <select id ="ms"name="state" class="form-control selectpicker" multiple="multiple">
+                            <select id="AB" name="state"  multiple="multiple">
                                 <option value="Orientación">Orientación</option>
                                 <option value="Contención emocional">Contención emocional</option>
                                 <option value="Información sobre derechos, aspectos legales y servicios">Información sobre derechos, aspectos legales y servicios</option>
@@ -229,7 +268,7 @@
                     <div class="col-md-6 selectContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                            <select id="ms" name="state" class="form-control selectpicker" multiple="multiple">
+                            <select id="RIS" name="state"   multiple="multiple">
                                 <option value="">Atención individual</option>
                                 <option value="">Grupo de apoyo de VIF</option>
                                 <option value="">Grupo terapéutico de VIF</option>
@@ -343,32 +382,50 @@
 
         </form>
     </div>
-</body>
-<script >
-    function Violencia() {
-        var x = document.getElementById("TP").value;
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/multiple-select.js"></script>
+    <script>
 
-        if (x == "Violencia intrafamiliar" || x == "Violencia en la infancia" || x == "Violencia extrafamiliar") {
-            document.getElementById('PLR').style.display = "inline";
-            document.getElementById('CasoViolencia').style.display = "inline";
-        }
-        else {
-
-            document.getElementById('PLR').style.display = "none";
-            document.getElementById('CasoViolencia').style.display = "none";
-        }
-    }
-</script>
-<script src="~/Scripts/multiple-select.js"></script>
-<script src="~/Scripts/jquery.min.js"></script>
-<script>
-    $(function () {
-        $('#ms').change(function () {
-            console.log($(this).val());
-        }).multipleSelect({
-            width: '100%'
+        $(function () {
+            $('#AB').change(function () {
+                console.log($(this).val());
+            }).multipleSelect({
+                width: '100%'
+            });
         });
-    });
-</script>
 
+        $(function () {
+            $('#RIS').change(function () {
+                console.log($(this).val());
+            }).multipleSelect({
+                width: '100%'
+            });
+        });
+        var modal = document.getElementById('PA');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function Violencia() {
+            var x = document.getElementById("TP").value;
+
+            if (x == "Violencia intrafamiliar" || x == "Violencia en la infancia" || x == "Violencia extrafamiliar") {
+                document.getElementById('PLR').style.display = "inline";
+                document.getElementById('CasoViolencia').style.display = "inline";
+            }
+            else {
+
+                document.getElementById('PLR').style.display = "none";
+                document.getElementById('CasoViolencia').style.display = "none";
+            }
+
+
+
+        }
+
+    </script>
+    
+</body>
 </html>
